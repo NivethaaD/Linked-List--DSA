@@ -13,3 +13,12 @@ class Solution:
        temp = Node(x)
        temp.next = head
        return temp
+
+2. Delete Head of Linked List
+
+class Solution:
+    def deleteHead(self, head):
+        temp = head.next
+        head.next = None
+        return temp
+    
