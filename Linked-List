@@ -67,3 +67,15 @@ class Solution:
             
         temp.next = ans
         return head
+
+6. Delete Head of Doubly Linked List
+
+class Solution:
+    def deleteHead(self, head):
+        # code here
+        
+        temp = head.next
+        temp.prev = None
+        head.next = None
+        return temp
+
