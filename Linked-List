@@ -34,3 +34,16 @@ class Solution:
             temp = temp.next
         
         return count
+
+4. Search in Linked List
+
+class Solution:
+    def searchKey(self, head, key):
+        temp = head
+        
+        while temp!=None:
+            if temp.data == key:
+                return True
+            temp = temp.next
+        
+        return False
