@@ -47,3 +47,23 @@ class Solution:
             temp = temp.next
         
         return False
+
+5. Insertion in a Doubly Linked List
+
+class Solution:
+    def insertAtPos(self, head, p, x):
+        # Code Here
+        ans = Node(x)
+        temp = head
+        
+        for _ in range(p):
+            temp = temp.next
+            
+        ans.next = temp.next
+        ans.prev = temp
+        
+        if temp.next:
+            temp.next.prev = ans
+            
+        temp.next = ans
+        return head
