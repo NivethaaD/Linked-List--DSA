@@ -22,3 +22,15 @@ class Solution:
         head.next = None
         return temp
     
+3. Length of Linked List
+
+class Solution:
+    def getCount(self, head):
+        temp = head
+        count = 0
+        
+        while temp!=None:
+            count = count + 1
+            temp = temp.next
+        
+        return count
