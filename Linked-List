@@ -79,3 +79,17 @@ class Solution:
         head.next = None
         return temp
 
+7. Reverse a Doubly Linked List
+
+class Solution:
+    def reverse(self, head):
+        cur = head
+        ansHead = None
+        
+        while cur!=None:
+            cur.prev, cur.next = cur.next, cur.prev
+            ansHead = cur
+            cur = cur.prev
+            
+        return ansHead
+
