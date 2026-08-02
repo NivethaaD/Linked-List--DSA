@@ -93,3 +93,14 @@ class Solution:
             
         return ansHead
 
+8. Middle of the Linked List
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = fast = head
+
+        while fast and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+        return slow
+
