@@ -135,3 +135,25 @@ class Solution:
 
         return False
 
+11. Linked List Cycle II
+
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = fast = head
+
+        # Step 1: Detect if a cycle exists
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                # Step 2: Find the cycle starting node
+                slow = head
+
+                while slow != fast:
+                    slow = slow.next
+                    fast = fast.next
+
+                return slow
+
+        return None
