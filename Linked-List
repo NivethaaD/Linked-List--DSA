@@ -157,3 +157,31 @@ class Solution:
                 return slow
 
         return None
+
+12. Cycle Length in Linked List
+
+class Solution:
+    def lengthOfLoop(self, head):
+        slow = head
+        fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            
+            if slow == fast:
+                slow = head
+                
+                while slow!=fast:
+                    slow=slow.next
+                    fast=fast.next
+                
+                cnt = 1
+                temp = slow.next
+                while temp!=slow:
+                    cnt = cnt+1
+                    temp=temp.next
+                return cnt
+        
+        return 0
+
