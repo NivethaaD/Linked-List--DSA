@@ -185,3 +185,42 @@ class Solution:
         
         return 0
 
+13. Palindrome Linked List
+
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        # Find the middle node
+            
+        slow = head
+        fast = head
+            
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        if fast:
+            slow = slow.next
+        
+        # Reverse the node of second of the middle node
+
+        prev = None
+        nxt = None
+
+        while slow!=None:
+            nxt = slow.next
+            slow.next = prev
+            prev = slow
+            slow = nxt
+
+        # Traverse
+
+        temp1 = head
+        temp2 = prev
+
+        while temp2:
+            if temp1.val != temp2.val:
+                return False
+            temp1 = temp1.next
+            temp2 = temp2.next
+        
+        return True
