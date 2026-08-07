@@ -247,3 +247,28 @@ class Solution:
         return head
 
 
+15. Remove Nth Node From End of List
+
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        count = 0
+        temp = head
+
+        while temp!=None:
+            count = count+1
+            temp = temp.next
+
+        if count == n:
+            return head.next
+
+        temp = head
+        steps = count - n - 1
+
+        while steps>0:
+            temp = temp.next
+            steps = steps-1
+        
+        temp.next = temp.next.next
+        return head
+
+
