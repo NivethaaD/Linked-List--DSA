@@ -271,4 +271,27 @@ class Solution:
         temp.next = temp.next.next
         return head
 
+16. Delete the Middle Node of a Linked List
+
+class Solution:
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head == None or head.next==None:
+            return None
+
+        slow = head
+        fast = head
+
+        while fast and fast.next!=None:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow==fast:
+                return slow
+        
+        temp = head
+        while temp.next!=slow:
+            temp = temp.next
+        
+        temp.next = temp.next.next
+        return head
 
